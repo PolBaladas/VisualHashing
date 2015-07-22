@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <link href="static/main.css" rel="stylesheet" type="text/css" media="all">
+
+    <script>
+    window.addEventListener("load",function(){
+        var matrix = {{matrix}}
+
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+        for(var i=0; i<matrix.length; i++){
+            ctx.moveTo(matrix[i][0],matrix[i][1]);
+            ctx.lineTo(matrix[i+1][0],matrix[i+1][1]);
+            ctx.arc(matrix[i+1][0],matrix[i+1][1],2,0,2*Math.PI);
+            ctx.stroke();
+        }
+    });
+</script>
+</head>
+    <body>
+
+        <div class="header">
+            <h2>Visual file Hasher</h2>
+        </div>
+
+        
+        <div class="box">
+            <form action="/" enctype="multipart/form-data" method=post>
+                <dl>
+                <h4>Upload a file:<h4>
+                <dd><input type='file' enctype="multipart/form-data" name='file'>
+                <br>
+                <dd><input type=submit value=Upload>
+                </dl>
+            </form>
+
+
+            <div class="result">
+                <br>
+                <h3 style="text-align:center; margin-top:10;">Here is the VisualHash of your file :</h3>
+                <canvas id="canvas" width="500" height="500" style="margin-top:20; margin-left:25%;"></canvas>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h4>Little experiment made by <a href="http://www.github.com/PolBaladas">Pol Baladas</a></h4>
+        </div>
+    </body>
+</html>
