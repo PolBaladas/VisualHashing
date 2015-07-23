@@ -27,23 +27,25 @@
         <div class="box">
             <form action="/" enctype="multipart/form-data" method=post>
                 <dl>
-                <h4>Upload a file:<h4>
+                <h5>Upload a file:<h5>
                 <dd><input type='file' enctype="multipart/form-data" name='file'>
                 <br>
                 <dd><input type=submit value=Upload>
                 </dl>
             </form>
 
-
-            <div class="result">
-                <br>
-                <h3 style="text-align:center; margin-top:10;">Here is the VisualHash of your file :</h3>
-                <canvas id="canvas" width="500" height="500" style="margin-top:20; margin-left:25%;"></canvas>
-            </div>
+            {% if matrix %}
+                <div class="result">
+                    <br>
+                    <h3 style="text-align:center; margin-top:10;">Here is the VisualHash of your file :</h3>
+                    <canvas id="canvas" width="500" height="500" style="margin-top:20; margin-left:25%;"></canvas>
+                 </div>
+            {%endif%}
         </div>
 
         <div class="footer">
             <h4>Little experiment made by <a href="http://www.github.com/PolBaladas">Pol Baladas</a></h4>
+            <h5 style="text-align:center;">Check <a href="https://github.com/PolBaladas/VisualHashing">this Project</a> on Github</h5>
         </div>
     </body>
 </html>
